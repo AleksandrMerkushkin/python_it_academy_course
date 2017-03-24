@@ -1,0 +1,18 @@
+Получить курсы валют BYR­to­USD, BYR­to­EUR, BYR­to­RUR с веб­сервиса
+https://developer.yahoo.com/yql/ в формате JSON. Распарсить JSON средставами
+стандартной библиотеки. Логику получения данных из веб­сервиса завернуть в функцию.
+Список валют, по которым нужно получить курс, должен быть передан через параметры
+функции. Данные по актуальному курсу следуеть вывести на консоль, используюя
+функцию print.
+
+Пример функции и входных данных:
+
+def get_currency_rate(currency_list):
+data = {}
+# get currency exchange rate from Web
+# parse json
+# save useful info to dictionary
+return data
+print(get_currency_rate([“BYRUSD”, “BYREUR”]))
+
+stdout:  {“BYRUSD”: 20000.0, “BYREUR”: 20000.0}
