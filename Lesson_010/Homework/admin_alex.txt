@@ -1,1 +1,0 @@
-{"session": null, "wallet": {"copper": {"amount": 999999, "code": 3}, "silver": {"amount": 99999, "code": 2}, "gold": {"amount": 9999, "code": 1}}, "password": "1234567", "name": "Alex", "email": "admin_alex@mail.ru"}
