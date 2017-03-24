@@ -1,0 +1,34 @@
+SQl queries:
+
+1.  INSERT INTO `Player`(`type`,      `nickname`, `email`, `password`, `created`, `updated`) VALUES (1, 'Vasya', 'vasya@tut.by', 'abc123', now(), now());
+    INSERT INTO `Money` (`player_id`, `code`,     `amount`,            `created`, `updated`) VALUES (1, 3, 10000,                      	   now(), now());
+    INSERT INTO `Money` (`player_id`, `code`,     `amount`,            `created`, `updated`) VALUES (1, 1, 1000,               	   		   now(), now());
+
+2.  INSERT INTO `Player`(`type`,      `nickname`, `email`, `password`, `created`, `updated`) VALUES (0, 'admin_Vasya', 'vasya_admin@tut.by', 'abc1234567', now(), now());
+    INSERT INTO `Money` (`player_id`, `code`,     `amount`,            `created`, `updated`) VALUES (2, 1, 999,                      	   			 	   now(), now());
+    INSERT INTO `Money` (`player_id`, `code`,     `amount`,            `created`, `updated`) VALUES (2, 2, 9999,               	   		   			       now(), now());
+    INSERT INTO `Money` (`player_id`, `code`,     `amount`,            `created`, `updated`) VALUES (2, 3, 99999,               	   		   		       now(), now());
+
+3.  UPDATE Player SET email='vasya@vasya.com'                     WHERE nickname='Vasya';
+    UPDATE Player SET email='vasya@vasya_admin.com'               WHERE id=2;
+    UPDATE Player SET password='abc123new', nickname='Vasya_new'  WHERE id=1;
+    UPDATE Money  SET amount=100                                  WHERE player_id=1;
+    UPDATE Money  SET amount=1000                                 WHERE player_id=1 AND code=3;
+    UPDATE Money  SET amount=1000                                 WHERE player_id=2 AND code=1;
+    UPDATE Money  SET amount=10000                                WHERE player_id=2 AND code=2;
+    UPDATE Money  SET amount=100000                               WHERE player_id=2 AND code=3;
+
+    SELECT id, type, nickname, email                              FROM Player;
+    SELECT * FROM Player                                          ORDER BY id DESC LIMIT 1;
+    SELECT * FROM Player                                          ORDER BY type;
+    SELECT * FROM game_admin.Money                                ORDER BY amount;
+    SELECT * FROM game_admin.Money                                ORDER BY player_id, amount;
+    SELECT player_id, created, updated                            FROM Money;
+    SELECT player_id, created, updated                            FROM Money ORDER BY id DESC LIMIT 3;
+
+    DELETE FROM Money                                             WHERE player_id=2;
+    DELETE FROM Player                                            WHERE id=2;
+    DELETE FROM Money                                             WHERE id=1 AND amount=1000;
+    DELETE  FROM Money                                            WHERE id=2;
+    DELETE  FROM Player                                           WHERE id=1;
+
